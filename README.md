@@ -29,8 +29,8 @@ A mod for Among us for better chatting
 <h2>Acknowledgement | 致谢</h2>
 <p>The code used is from | 所使用的代码来自<br>
  <a href="https://github.com/tukasa0001/TownOfHost">TownOfHost</a>
- <a href=""
-    </p>
+ <a href="https://github.com/XtremeWave/TownOfNewEpic_Xtreme">TownOfNewEpic_Xtreme</a>
+</p>
 
 
 
