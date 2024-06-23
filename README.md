@@ -26,5 +26,12 @@ A mod for Among us for better chatting
   ② 可输入的字数达到10000（但不能在树懒反作弊"罩着"的地方发送超过100个，否则直接给你踢了:) ）</p>
 </details>
 
+<h2>Acknowledgement | 致谢</h2>
+<p>The code used is from | 所使用的代码来自<br>
+ <a href="https://github.com/tukasa0001/TownOfHost">TownOfHost</a>
+ <a href=""
+    </p>
+
+
 
 <p>This mod is not affiliated with Among Us or Innersloth LLC, and the content contained therein is not endorsed or otherwise sponsored by Innersloth LLC. Portions of the materials contained herein are property of Innersloth LLC. © Innersloth LLC.</p>
