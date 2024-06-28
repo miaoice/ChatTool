@@ -34,3 +34,9 @@ A mod for Among us for better chatting
 
 <br>
 <font size=150%><b><p>This mod is not affiliated with Among Us or Innersloth LLC, and the content contained therein is not endorsed or otherwise sponsored by Innersloth LLC. Portions of the materials contained herein are property of Innersloth LLC. © Innersloth LLC.</p></b></font>
+
+---
+# 🎁 Releases | 资源 🎁
+| Version<br>-------<br>版本| Among Us - Version<br>------------------<br>Among Us 版本 | Link<br>----<br>链接 |
+|----------|-------------|-----------------|
+| v1.0.0 | 2024.6.18 | [Download](https://github.com/miaoice/ChatTool/releases/tag/v1.0.0) |
