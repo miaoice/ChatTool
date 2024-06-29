@@ -1,17 +1,20 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
+    <Version>1.1.0</Version>
         <TargetFramework>net6.0</TargetFramework>
         <LangVersion>latest</LangVersion>
         <DebugType>embedded</DebugType>
 
-        <VersionPrefix>11.45.14</VersionPrefix>
-        <Description>可以使用Ctrl+C/V/X(复制 粘贴 剪切)</Description>
+        <VersionPrefix>1.1.0</VersionPrefix>
+        <Description>A mod for Among Us to get better chat</Description>
         <Authors>no_one</Authors>
     </PropertyGroup>
 
-    <!--<ItemGroup>
-        <EmbeddedResource Include=".\Assets\**" />
-    </ItemGroup>-->
+    <ItemGroup>
+        <EmbeddedResource Include="Resources\Warningwords.txt" />
+    </ItemGroup>
+
+
 
     <ItemGroup>
         <PackageReference Include="BepInEx.Unity.IL2CPP" Version="6.0.0-be.662" Private="false" ExcludeAssets="runtime;native" />
