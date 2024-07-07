@@ -47,6 +47,7 @@ A mod for Among us for better chatting
 ## 🎁 Releases | 资源 🎁 
 | Version<br>-------<br>版本| Among Us - Version<br>------------------<br>Among Us 版本 | Link<br>----<br>链接 |
 |:---:|:---:|:---:|
+| v1.2.0 |2024.6.18| [Download](https://github.com/miaoice/ChatTool/releases/tag/1.2.0) |
 | v1.1.0 & v1.1.1 | 2024.6.18 | [Download](https://github.com/miaoice/ChatTool/releases/tag/v1.1.0%26v1.1.1) |
 | v1.0.0 | 2024.6.18 | [Download](https://github.com/miaoice/ChatTool/releases/tag/v1.0.0) |
 ---
