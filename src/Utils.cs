@@ -1,15 +1,23 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using AmongUs.GameOptions;
+using Sentry.Internal.Extensions;
+using UnityEngine;
+using static InnerNet.InnerNetClient;
+
 namespace ChatTool;
 
 public class Utils
-{
+{    
     public static string GetPing(int ping){
 
-        return $"<color=#00ff00>\nPing: {ping} ms</color>";
+        return $"<color=#9CDCF0>\nPing: {ping} ms</color>";
 
         
-    }    public static string GetFPS(float fps){
+    }   
 
-        return $"<color=#1F1F85>\nFPS: {fps}</color>";
-        
-    }
+    public bool canstartgame = true;
+    public static string ColorString(Color32 color, string str) => $"<color=#{color.r:x2}{color.g:x2}{color.b:x2}{color.a:x2}>{str}</color>";
+
 }
