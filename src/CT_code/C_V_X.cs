@@ -8,14 +8,6 @@ namespace ChatTool
 	[HarmonyPatch(typeof(ChatController), "Update")]
 	internal class ChatControllerUpdatePatch
 	{
-		public static void Prefix()
-		{
-			bool flag = AmongUsClient.Instance.AmHost && DataManager.Settings.Multiplayer.ChatMode == QuickChatModes.QuickChatOnly;
-			if (flag)
-			{
-				DataManager.Settings.Multiplayer.ChatMode = QuickChatModes.FreeChatOrQuickChat;
-			}
-		}
 
 		public static void Postfix(ChatController __instance)
 		{
