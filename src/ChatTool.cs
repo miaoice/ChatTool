@@ -12,7 +12,10 @@ namespace ChatTool;
 [BepInProcess("Among Us.exe")]
 public partial class ChatTool : BasePlugin
 {
+
     public Harmony Harmony { get; } = new(Id);
+    public static ConfigEntry<string> menuKeybind;
+    
 
     public override void Load()
     {
@@ -22,13 +25,7 @@ public partial class ChatTool : BasePlugin
             if (scene.name == "MainMenu")
             {
                 ModManager.Instance.ShowModStamp(); 
-
             }
         }));
-        }
-
-        
     }
-    
-
-
+ }
