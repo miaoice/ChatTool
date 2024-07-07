@@ -1,11 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-    <Version>1.1.0</Version>
         <TargetFramework>net6.0</TargetFramework>
         <LangVersion>latest</LangVersion>
+        <Configurations>Debug;Release</Configurations>
         <DebugType>embedded</DebugType>
 
-        <VersionPrefix>1.1.0</VersionPrefix>
+        <VersionPrefix>1.2.0</VersionPrefix>
         <Description>A mod for Among Us to get better chat</Description>
         <Authors>no_one</Authors>
     </PropertyGroup>
