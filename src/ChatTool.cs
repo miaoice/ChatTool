@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using BepInEx.Configuration;
 using HarmonyLib;
 
+
 namespace ChatTool;
 
 [BepInAutoPlugin]
@@ -13,7 +14,8 @@ namespace ChatTool;
 public partial class ChatTool : BasePlugin
 {
 
-    public Harmony Harmony { get; } = new(Id);
+    public const string PluginGuid = "Not.mb.ChatTool";
+    public Harmony Harmony { get; } = new Harmony(PluginGuid);
     public static ConfigEntry<string> menuKeybind;
     
 
