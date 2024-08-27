@@ -9,11 +9,6 @@ namespace ChatTool
             
         }
 
-        internal bool OnCastVote(MeetingHud instance, byte srcPlayerId, byte suspectPlayerId)
-        {
-            throw new NotImplementedException();
-        }
-
         public static CustomGamemode Instance;
     }
 }
