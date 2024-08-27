@@ -29,7 +29,7 @@ namespace ChatTool
             {
                 if (chatText.Contains(word))
                 {
-                    chatText = "<color=#FF0000>[Warning Message]</color>\n" + ColorString(Color.white, chatText.TrimEnd('\0'));
+                    SIGP.ACW("<align=center><size=125%>Warning Message</size></align>");
                     return; // Only process the first occurrence of a sensitive word
                 }
             }
