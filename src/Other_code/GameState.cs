@@ -1,4 +1,5 @@
 namespace ChatTool;
+
 public static class GameStates
 {
     public static bool InGame = false;
@@ -28,3 +29,5 @@ public static class GameStates
     public static bool IsCanMove => PlayerControl.LocalPlayer?.CanMove is true;
     public static bool IsDead => PlayerControl.LocalPlayer?.Data?.IsDead is true;
 }
+
+
