@@ -25,7 +25,9 @@ public static class PingTracker_Update
 
         deltaTime += (Time.deltaTime - deltaTime) * 0.1f;
         float fps = Mathf.Ceil(1.0f / deltaTime);
-     __instance.text.text += "\nBy <color=#FFFF00>Miaoice\nMaybe not me</color>";
-        __instance.text.text += Utils.GetPing(AmongUsClient.Instance.Ping);
+     __instance.text.text += "\nBy <color=#FFFF00>Miaoice</color>";
+        __instance.text.text += Utils.GetPing(AmongUsClient.Instance.Ping) + Utils.GetFps(fps);
+        //FPS: <color=#FF0000>" + fps.ToString() + "</color>"
+        
     }
 }
