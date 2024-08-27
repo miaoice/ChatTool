@@ -1,66 +1,26 @@
-using Epic.OnlineServices.Presence;
+using AmongUs.GameOptions;
 using HarmonyLib;
+using Hazel;
 using InnerNet;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.ProBuilder;
+
 namespace ChatTool
 {
-    
-    class C
-    {
-        public static bool CDS = false;
-    }
     
     [HarmonyPatch(typeof(ControllerManager), nameof(ControllerManager.Update))]
     class ControllerManagerUpdatePatch
     {
         public static void Postfix()
         {
-            if (Input.GetKeyDown(KeyCode.LeftControl) && GameStates.IsLobby)
-                PlayerControl.LocalPlayer.GetComponent<CircleCollider2D>().enabled = !PlayerControl.LocalPlayer.gameObject.GetComponent<CircleCollider2D>().enabled;
-
             // 强制显示聊天框
-            if (GetKeysDown(new[] { KeyCode.Return, KeyCode.C, KeyCode.LeftShift}))
+            if (GetKeysDown(new[] { KeyCode.Return, KeyCode.C, KeyCode.LeftShift}) && !GameStates.IsInGame)
             {
                 HudManager.Instance.Chat.SetVisible(true);
                 SIGP.SIGD("Shou Chat Button");
                 Log.Warning("show chat button");
             }
-            //-------------------------
-            //作弊模式
-            if (GetKeysDown(new[] { KeyCode.F1 }))
-            {
-                if (!C.CDS)
-                {
-                    C.CDS = true;
-                    SIGP.SIGD("CDS ON");
-                }else if (C.CDS)
-                {
-                    C.CDS = !C.CDS;
-                    SIGP.SIGD("CDS OFF");
-                }
-            }
-            //内鬼CD => 0s
-            if (Input.GetKeyDown(KeyCode.F2))
-            {
-                if(C.CDS)
-                {
-                PlayerControl.LocalPlayer.Data.Object.SetKillTimer(0f);
-                SIGP.SIGD("Set kill cooldown to 0");
-                }
-            }
-            //做完任务
-            if (Input.GetKeyDown(KeyCode.F3))
-            {if(C.CDS)
-                {
-                foreach (var task in PlayerControl.LocalPlayer.myTasks)
-                PlayerControl.LocalPlayer.RpcCompleteTask(task.Id);
-                SIGP.SIGD("Complete all tasks");
-                }
-            }
-            
-            
             //-------------------------
             //房主
             if (!AmongUsClient.Instance.AmHost) return;
@@ -86,22 +46,13 @@ namespace ChatTool
                 Log.Warning("Change start time to 0");
             }
 
-            
-            //仅测试
-            
-            if (GetKeysDown(new[] {KeyCode.K}))
-            
-            {
-                SIGP.SIGD("Only test(press K)");
-            }
-            
+
             //开场动画测试
             if (Input.GetKeyDown(KeyCode.G) && GameStates.IsFreePlay)
             {
                 HudManager.Instance.StartCoroutine(HudManager.Instance.CoFadeFullScreen(Color.clear, Color.black));
                 HudManager.Instance.StartCoroutine(DestroyableSingleton<HudManager>.Instance.CoShowIntro());
             }
-            
         }
         
         static bool GetKeysDown(KeyCode[] keys)
@@ -112,6 +63,24 @@ namespace ChatTool
             }
             return false;
         }
+        public static void murderPlayer(PlayerControl target, MurderResultFlags result)
+        {
+        if (GameStates.IsFreePlay){
+
+            PlayerControl.LocalPlayer.MurderPlayer(target, MurderResultFlags.Succeeded);
+            return;
+        
+        }
+
+        foreach (var item in PlayerControl.AllPlayerControls)
+        {
+            MessageWriter writer = AmongUsClient.Instance.StartRpcImmediately(PlayerControl.LocalPlayer.NetId, (byte)RpcCalls.MurderPlayer, SendOption.None, AmongUsClient.Instance.GetClientIdFromCharacter(item));
+            writer.WriteNetObject(target);
+            writer.Write((int)result);
+            AmongUsClient.Instance.FinishRpcImmediately(writer);
+        }
+    }
         
     }
+    
 }
