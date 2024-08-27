@@ -14,7 +14,7 @@ public static class Zoom
     public static void Postfix()
     {
         //if (PlayerControl.LocalPlayer.Is(RoleType.Impostor) && Options.OperateVisibilityImpostor.GetBool()) return;
-        if (GameStates.IsShip && !GameStates.IsMeeting && GameStates.IsCanMove && PlayerControl.LocalPlayer.Data.IsDead || GameStates.IsLobby && GameStates.IsCanMove)
+        if (GameStates.IsShip && !GameStates.IsMeeting && GameStates.IsCanMove && PlayerControl.LocalPlayer.Data.IsDead || GameStates.IsLobby && GameStates.IsCanMove || GameStates.IsFreePlay)
         {
             if (Camera.main.orthographicSize > 3.0f)
                 ResetButtons = true;
@@ -29,13 +29,14 @@ public static class Zoom
             }
             if (Input.mouseScrollDelta.y < 0)
             {
-                if (GameStates.IsDead || GameStates.IsFreePlay || GameStates.IsLobby )
-                {
-                    if (Camera.main.orthographicSize < 18.0f)
+                if (GameStates.IsDead || GameStates.IsFreePlay || GameStates.IsLobby)
                     {
-                        SetZoomSize(times: true);
-                    }
-                }
+                        if (Camera.main.orthographicSize < 18.0f)
+                        {
+                            SetZoomSize(times: true);
+                        }
+                 }   
+                
             }
             Flag.NewFlag("Zoom");
         }
