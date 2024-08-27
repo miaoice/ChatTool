@@ -13,7 +13,11 @@ public class Utils
     public static string GetPing(int ping){
 
         return $"<color=#9CDCF0>\nPing: {ping} ms</color>";
+        
+    }  
+    public static string GetFps(float fps){
 
+        return $"<color=#9CDCF0>\nFps: {fps}</color>";
         
     }   
 
