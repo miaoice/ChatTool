@@ -10,7 +10,7 @@ namespace ChatTool
 		[HarmonyPrefix]
 		public static bool ModifyCharacterLimit(TextBoxTMP __instance, [HarmonyArgument(0)] string input, [HarmonyArgument(1)] string inputCompo = "")
 		{
-			__instance.characterLimit = (AmongUsClient.Instance.AmHost ? 10000 : 10000);
+			__instance.characterLimit = AmongUsClient.Instance.AmHost ? 10000 : 10000;
 			if (input.Length < 1)
 			{
 				return true;
