@@ -1,6 +1,11 @@
 # ChatTool
 <p align="center" dir="auto">
 A mod for Among us for better chatting
+        
+> [!Note]
+> 我已经停止更新因为我完全不会修复已经失效的功能:(<br>
+> I've stopped updating because I won't fix dead features at all :(
+        
 </p>
 <h2> function | 功能</h2>
 <details>
